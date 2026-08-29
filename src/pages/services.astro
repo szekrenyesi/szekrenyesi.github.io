@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { t } from '../i18n/ui';
+import { services } from '../data/services';
+const lang = 'hu' as const;
+---
+
+<BaseLayout title={t(lang, 'services.title')} lang={lang}>
+  <h1>{t(lang, 'services.title')}</h1>
+  <p class="lead">{t(lang, 'services.lead')}</p>
+
+  {services.map((s) => (
+    <div class="service">
+      <h3>{s.title[lang]}</h3>
+      <p>{s.description[lang]}</p>
+    </div>
+  ))}
+</BaseLayout>

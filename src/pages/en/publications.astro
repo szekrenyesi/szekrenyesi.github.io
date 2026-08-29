@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { t } from '../../i18n/ui';
+import { publications, pubTypeLabels, pubTypeOrder } from '../../data/publications';
+import { profile } from '../../data/profile';
+const lang = 'en' as const;
+
+const grouped = pubTypeOrder
+  .map((type) => ({
+    type,
+    items: publications
+      .filter((p) => p.type === type)
+      .sort((a, b) => b.year - a.year),
+  }))
+  .filter((g) => g.items.length > 0);
+---
+
+<BaseLayout title={t(lang, 'publications.title')} lang={lang}>
+  <h1>{t(lang, 'publications.title')}</h1>
+
+  <p><a href={profile.mtmt}>{t(lang, 'publications.full')} →</a></p>
+
+  {grouped.map((group) => (
+    <>
+      <h2>{pubTypeLabels[group.type][lang]}</h2>
+      {group.items.map((p) => (
+        <div class="entry">
+          <span class="year">{p.year}</span>
+          <span class="body">
+            <span class="title">{p.title}</span>
+            {p.quartile && <span class="badge">{p.quartile}</span>}
+            <span class="meta">{p.authors}. <em>{p.venue}</em>{p.detail ? `, ${p.detail}` : ''}.
+            {p.doi && <> <a href={p.doi}>DOI</a></>}
+            </span>
+          </span>
+        </div>
+      ))}
+    </>
+  ))}
+</BaseLayout>

@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { t } from '../i18n/ui';
+import { talks } from '../data/talks';
+const lang = 'hu' as const;
+---
+
+<BaseLayout title={t(lang, 'talks.title')} lang={lang}>
+  <h1>{t(lang, 'talks.title')}</h1>
+
+  {talks.map((tk) => (
+    <div class="entry">
+      <span class="year">{tk.year}</span>
+      <span class="body">
+        <span class="title">{tk.title}</span>
+        <span class="meta">{tk.authors}. {tk.venue}, {tk.date}</span>
+      </span>
+    </div>
+  ))}
+</BaseLayout>

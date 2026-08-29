@@ -1,0 +1,30 @@
+---
+import { t, type Lang } from '../i18n/ui';
+import { profile } from '../data/profile';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const displayName = lang === 'hu' ? profile.name : profile.nameEn;
+const initials = 'Sz';
+---
+
+<aside class="sidebar">
+  <div class="avatar" aria-hidden="true">
+    {profile.avatar
+      ? <img src={profile.avatar} alt={displayName} />
+      : initials}
+  </div>
+  <div class="name">{displayName}</div>
+  <div class="role">{profile.position[lang]}</div>
+  <div class="role">{profile.affiliation[lang]}</div>
+
+  <ul class="contact-list">
+    <li><span class="icon">✉</span><a href={`mailto:${profile.email}`}>{profile.email}</a></li>
+    <li><span class="icon">◆</span><a href={profile.mtmt}>{t(lang, 'contact.mtmt')}</a></li>
+    <li><span class="icon">▲</span><a href={profile.github}>GitHub</a></li>
+    <li><span class="icon">↓</span><a href={profile.cvUrl}>{t(lang, 'nav.cv')} (PDF)</a></li>
+  </ul>
+</aside>

@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { t } from '../i18n/ui';
+const lang = 'hu' as const;
+---
+
+<BaseLayout title="Kezdőlap" lang={lang}>
+  <p class="tagline">{t(lang, 'home.tagline')}</p>
+  <h1>Szekrényes István</h1>
+  <p class="lead">{t(lang, 'home.intro')}</p>
+
+  <p><a href="/about">{t(lang, 'home.more')} →</a></p>
+</BaseLayout>

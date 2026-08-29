@@ -1,0 +1,49 @@
+---
+import { t, localizedPath, type Lang } from '../i18n/ui';
+import { profile } from '../data/profile';
+
+interface Props {
+  lang: Lang;
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+
+const navItems = [
+  { key: 'nav.home', path: '/' },
+  { key: 'nav.about', path: '/about' },
+  { key: 'nav.publications', path: '/publications' },
+  { key: 'nav.talks', path: '/talks' },
+  { key: 'nav.services', path: '/services' },
+  { key: 'nav.contact', path: '/contact' },
+] as const;
+
+const isCurrent = (path: string) => {
+  const target = localizedPath(lang, path);
+  if (path === '/') return currentPath === target;
+  return currentPath.startsWith(target);
+};
+
+const stripped =
+  lang === 'en'
+    ? currentPath.replace(/^\/en/, '') || '/'
+    : currentPath;
+---
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <a class="site-title" href={localizedPath(lang, '/')}>{lang === 'hu' ? profile.name : profile.nameEn}</a>
+    <nav class="primary" aria-label="Main">
+      {navItems.map((item) => (
+        <a href={localizedPath(lang, item.path)} aria-current={isCurrent(item.path) ? 'page' : undefined}>
+          {t(lang, item.key)}
+        </a>
+      ))}
+    </nav>
+    <div class="lang-switch">
+      <a href={localizedPath('hu', stripped)} aria-current={lang === 'hu' ? 'true' : undefined}>HU</a>
+      <span aria-hidden="true"> · </span>
+      <a href={localizedPath('en', stripped)} aria-current={lang === 'en' ? 'true' : undefined}>EN</a>
+    </div>
+  </div>
+</div>

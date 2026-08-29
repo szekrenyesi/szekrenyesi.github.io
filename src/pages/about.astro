@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { t } from '../i18n/ui';
+import { profile } from '../data/profile';
+const lang = 'hu' as const;
+---
+
+<BaseLayout title={t(lang, 'about.title')} lang={lang}>
+  <h1>{t(lang, 'about.title')}</h1>
+  <p class="lead">A Debreceni Egyetem Filozófia Intézetének adjunktusa vagyok; logikát, nyelvfilozófiát, tudományfilozófiát és más kapcsolódó tárgyakat tanítok. Oktatói munkám mellett számítógépes nyelvészettel és digitális bölcsészeti fejlesztésekkel is foglalkozom — főként a beszédtechnológia és a kézírás-felismerés területén.</p>
+
+  <h2>Végzettség</h2>
+  <ul>
+    <li>2020 – PhD, Debreceni Egyetem, Nyelvtudományok Doktori Iskola (Számítógépes Nyelvészet alprogram)</li>
+    <li>2010 – Filozófia – elméleti nyelvészet szakos bölcsész, Debreceni Egyetem</li>
+  </ul>
+
+  <h2>PhD-értekezés</h2>
+  <p><em>Prozódiai jellemzők gépi feldolgozása és hasznosítása élőnyelvi korpuszok elemzésében.</em> Témavezető: Prof. Dr. Hunyadi László.</p>
+
+  <h2>Jelenlegi és korábbi munkahelyek</h2>
+  <ul>
+    <li>2023– Egyetemi adjunktus, Debreceni Egyetem, Filozófia Intézet</li>
+    <li>2022–2026 Tudományos segédmunkatárs, ELTE, Digitális Bölcsészet Tanszék</li>
+    <li>2018–2023 Egyetemi tanársegéd, Debreceni Egyetem, Filozófia Intézet</li>
+    <li>2017–2022 Szoftverfejlesztő és beszédtechnológiai szakértő, MindSpeak Ltd. (New York, távmunka)</li>
+    <li>2014–2018 Egyetemi tanársegéd, Debreceni Egyetem, Általános és Alkalmazott Nyelvészeti Tanszék</li>
+    <li>2010–2014 Kutatási asszisztens, Debreceni Egyetem, Általános és Alkalmazott Nyelvészeti Tanszék</li>
+  </ul>
+
+  <p><a href={profile.cvUrl}>Teljes önéletrajz (PDF) ↓</a></p>
+</BaseLayout>
