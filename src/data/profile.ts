@@ -1,8 +1,6 @@
 export const profile = {
   name: 'Szekrényes István',
   nameEn: 'István Szekrényes',
-  email: 'szekrenyes.istvan@arts.unideb.hu',
-  phone: '+36304392304',
   affiliation: {
     hu: 'Debreceni Egyetem, Filozófia Intézet',
     en: 'Institute of Philosophy, University of Debrecen',
@@ -17,6 +15,11 @@ export const profile = {
   // Profilkép: tedd a fájlt a public/ mappába (pl. public/avatar.jpg),
   // majd írd ide az URL-t (a public/ gyökere = /). Ha null, monogram jelenik meg.
   avatar: null as string | null,
+  academic: {
+    email: 'szekrenyes.istvan@arts.unideb.hu',
+    phone: '+36 52 512 900 / 22124',
+    phoneTel: '+3652512900',   // clickable form for tel: (extension after slash)
+  },
   business: {
     name: 'Szekrényes István egyéni vállalkozó',
     nameEn: 'Szekrényes István, sole proprietor',
@@ -24,6 +27,9 @@ export const profile = {
       hu: '4027 Debrecen, Egyetem sugárút 11., földszint 4., Magyarország',
       en: '4027 Debrecen, Egyetem sugárút 11., ground floor 4, Hungary',
     },
+    email: 'i.szekrenyes@comp-ling.org',
+    phone: '+36 30 439 2304',
+    phoneTel: '+36304392304',   // clickable form for tel:
     registrationNumber: '62661315',
     taxNumber: '92272932-1-29',
     statisticalNumber: '92272932-7499-231-09',

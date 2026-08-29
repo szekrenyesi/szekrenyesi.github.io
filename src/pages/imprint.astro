@@ -19,7 +19,7 @@ const b = profile.business;
     <dd>{b.address[lang]}</dd>
 
     <dt>{t(lang, 'imprint.email')}</dt>
-    <dd><a href={`mailto:${profile.email}`}>{profile.email}</a></dd>
+    <dd><a href={`mailto:${b.email}`}>{b.email}</a></dd>
 
     <dt>{t(lang, 'imprint.registration')}</dt>
     <dd>{b.registrationNumber}</dd>

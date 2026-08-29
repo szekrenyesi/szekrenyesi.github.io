@@ -22,7 +22,7 @@ const initials = 'Sz';
   <div class="role">{profile.affiliation[lang]}</div>
 
   <ul class="contact-list">
-    <li><span class="icon">✉</span><a href={`mailto:${profile.email}`}>{profile.email}</a></li>
+    <li><span class="icon">✉</span><a href={`mailto:${profile.academic.email}`}>{profile.academic.email}</a></li>
     <li><span class="icon">◆</span><a href={profile.mtmt}>{t(lang, 'contact.mtmt')}</a></li>
     <li><span class="icon">▲</span><a href={profile.github}>GitHub</a></li>
     <li><span class="icon">↓</span><a href={profile.cvUrl}>{t(lang, 'nav.cv')} (PDF)</a></li>

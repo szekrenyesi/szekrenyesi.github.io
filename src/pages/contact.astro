@@ -3,13 +3,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { t } from '../i18n/ui';
 import { profile } from '../data/profile';
 const lang = 'hu' as const;
+const a = profile.academic;
+const b = profile.business;
 ---
 
 <BaseLayout title={t(lang, 'contact.title')} lang={lang}>
   <h1>{t(lang, 'contact.title')}</h1>
 
-  <p><strong>{t(lang, 'contact.email')}:</strong> <a href={`mailto:${profile.email}`}>{profile.email}</a></p>
-  <p><strong>{t(lang, 'contact.phone')}:</strong> <a href={`tel:${profile.phone}`}>{profile.phone}</a></p>
+  <h2>{t(lang, 'contact.workplace')}</h2>
+  <dl class="imprint">
+    <dt>{t(lang, 'contact.affiliation')}</dt>
+    <dd>{profile.affiliation[lang]}</dd>
+    <dt>{t(lang, 'contact.position')}</dt>
+    <dd>{profile.position[lang]}</dd>
+    <dt>{t(lang, 'contact.email')}</dt>
+    <dd><a href={`mailto:${a.email}`}>{a.email}</a></dd>
+    <dt>{t(lang, 'contact.phone')}</dt>
+    <dd><a href={`tel:${a.phoneTel}`}>{a.phone}</a></dd>
+  </dl>
+
+  <h2>{t(lang, 'contact.business')}</h2>
+  <dl class="imprint">
+    <dt>{t(lang, 'contact.email')}</dt>
+    <dd><a href={`mailto:${b.email}`}>{b.email}</a></dd>
+    <dt>{t(lang, 'contact.phone')}</dt>
+    <dd><a href={`tel:${b.phoneTel}`}>{b.phone}</a></dd>
+  </dl>
 
   <h2>Online profilok</h2>
   <ul>
