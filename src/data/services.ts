@@ -12,8 +12,8 @@ export const services: Service[] = [
       en: 'Development and fine-tuning of HTR and ASR models',
     },
     description: {
-      hu: 'Történeti kéziratok és gépiratok automatikus felismerése (TrOCR, PyLaia, Kraken), valamint egyedi beszédfelismerő rendszerek finomhangolása (Whisper, Kaldi) intézmények, kutatócsoportok igényeire szabva.',
-      en: 'Automatic recognition of historical manuscripts and typescripts (TrOCR, PyLaia, Kraken), and fine-tuning of custom speech recognition systems (Whisper, Kaldi) tailored to the needs of institutions and research groups.',
+      hu: 'Történeti kéziratok és gépiratok automatikus felismerése, valamint egyedi beszédfelismerő rendszerek finomhangolása intézmények és kutatócsoportok igényeire szabva.',
+      en: 'Automatic recognition of historical manuscripts and typescripts, and fine-tuning of custom speech recognition systems tailored to the needs of institutions and research groups.',
     },
   },
   {

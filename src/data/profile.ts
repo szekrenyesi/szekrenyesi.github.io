@@ -2,6 +2,7 @@ export const profile = {
   name: 'Szekrényes István',
   nameEn: 'István Szekrényes',
   email: 'szekrenyes.istvan@arts.unideb.hu',
+  phone: '+36304392304',
   affiliation: {
     hu: 'Debreceni Egyetem, Filozófia Intézet',
     en: 'Institute of Philosophy, University of Debrecen',
@@ -16,4 +17,35 @@ export const profile = {
   // Profilkép: tedd a fájlt a public/ mappába (pl. public/avatar.jpg),
   // majd írd ide az URL-t (a public/ gyökere = /). Ha null, monogram jelenik meg.
   avatar: null as string | null,
+  business: {
+    name: 'Szekrényes István egyéni vállalkozó',
+    nameEn: 'Szekrényes István, sole proprietor',
+    address: {
+      hu: '4027 Debrecen, Egyetem sugárút 11., földszint 4., Magyarország',
+      en: '4027 Debrecen, Egyetem sugárút 11., ground floor 4, Hungary',
+    },
+    registrationNumber: '62661315',
+    taxNumber: '92272932-1-29',
+    statisticalNumber: '92272932-7499-231-09',
+    mainActivity: {
+      hu: '749901 – Egyéb szakmai, tudományos, műszaki tevékenység m.n.s.',
+      en: '749901 – Other professional, scientific and technical activities n.e.c.',
+    },
+    activities: [
+      { hu: '181303 – Nyomdai kiadvány tördelése, szerkesztése, tipográfia',
+        en: '181303 – Typesetting and typographic work for print publications' },
+      { hu: '621002 – Egyedi szoftverfejlesztés',
+        en: '621002 – Custom software development' },
+      { hu: '621004 – Weblap tervezése (webdizájn)',
+        en: '621004 – Web design' },
+      { hu: '629001 – Egyéb számítástechnikai tevékenység',
+        en: '629001 – Other information technology activities' },
+      { hu: '722002 – Humán kutatás, fejlesztés',
+        en: '722002 – Research and development in the humanities' },
+      { hu: '854001 – Főiskolai és egyetemi oktatás (alapképzés, mesterképzés, doktori képzés)',
+        en: '854001 – Higher education (bachelor, master, and doctoral programmes)' },
+      { hu: '854002 – Egyéb felsőfokú továbbképzés',
+        en: '854002 – Other higher-education continuing training' },
+    ],
+  },
 };

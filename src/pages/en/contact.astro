@@ -9,8 +9,7 @@ const lang = 'en' as const;
   <h1>{t(lang, 'contact.title')}</h1>
 
   <p><strong>{t(lang, 'contact.email')}:</strong> <a href={`mailto:${profile.email}`}>{profile.email}</a></p>
-  <p><strong>{t(lang, 'contact.affiliation')}:</strong> {profile.affiliation[lang]}</p>
-  <p><strong>{t(lang, 'contact.position')}:</strong> {profile.position[lang]}</p>
+  <p><strong>{t(lang, 'contact.phone')}:</strong> <a href={`tel:${profile.phone}`}>{profile.phone}</a></p>
 
   <h2>Online profiles</h2>
   <ul>

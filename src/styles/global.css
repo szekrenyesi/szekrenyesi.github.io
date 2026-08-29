@@ -338,6 +338,55 @@ li {
   letter-spacing: 0.05em;
 }
 
+/* ── Imprint (definition list) ─────────────────────────── */
+
+dl.imprint {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.6rem 1.5rem;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  max-width: var(--content-max);
+}
+
+dl.imprint dt {
+  color: var(--color-muted);
+  font-weight: 600;
+  padding-top: 0.1rem;
+}
+
+dl.imprint dd {
+  margin: 0;
+  color: var(--color-text);
+}
+
+dl.imprint ul.plain {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+dl.imprint ul.plain li {
+  margin: 0 0 0.25rem 0;
+}
+
+dl.imprint ul.plain li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  dl.imprint {
+    grid-template-columns: 1fr;
+    gap: 0.15rem 0;
+  }
+  dl.imprint dt {
+    margin-top: 0.6rem;
+  }
+  dl.imprint dt:first-of-type {
+    margin-top: 0;
+  }
+}
+
 /* ── Services ──────────────────────────────────────────── */
 
 .service {

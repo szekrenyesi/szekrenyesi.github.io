@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Sidebar from '../components/Sidebar.astro';
-import { t, type Lang } from '../i18n/ui';
+import { t, localizedPath, type Lang } from '../i18n/ui';
 import { profile } from '../data/profile';
 
 interface Props {
@@ -43,7 +43,13 @@ const year = new Date().getFullYear();
     <footer class="site-footer">
       <div class="inner">
         <span>© {year} {t(lang, 'footer.copyright')}</span>
-        <span><a href={profile.mtmt}>MTMT</a> · <a href={profile.github}>GitHub</a></span>
+        <span>
+          <a href={localizedPath(lang, '/imprint')}>{t(lang, 'footer.imprint')}</a>
+          &nbsp;·&nbsp;
+          <a href={profile.mtmt}>MTMT</a>
+          &nbsp;·&nbsp;
+          <a href={profile.github}>GitHub</a>
+        </span>
       </div>
     </footer>
   </body>

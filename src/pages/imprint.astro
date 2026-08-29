@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { t } from '../i18n/ui';
+import { profile } from '../data/profile';
+const lang = 'hu' as const;
+const b = profile.business;
+---
+
+<BaseLayout title={t(lang, 'imprint.title')} lang={lang}>
+  <h1>{t(lang, 'imprint.title')}</h1>
+
+  <p class="lead">{t(lang, 'imprint.intro')}</p>
+
+  <dl class="imprint">
+    <dt>{t(lang, 'imprint.name')}</dt>
+    <dd>{b.name}</dd>
+
+    <dt>{t(lang, 'imprint.address')}</dt>
+    <dd>{b.address[lang]}</dd>
+
+    <dt>{t(lang, 'imprint.email')}</dt>
+    <dd><a href={`mailto:${profile.email}`}>{profile.email}</a></dd>
+
+    <dt>{t(lang, 'imprint.registration')}</dt>
+    <dd>{b.registrationNumber}</dd>
+
+    <dt>{t(lang, 'imprint.tax')}</dt>
+    <dd>{b.taxNumber}</dd>
+
+    <dt>{t(lang, 'imprint.statistical')}</dt>
+    <dd>{b.statisticalNumber}</dd>
+
+    <dt>{t(lang, 'imprint.activity')}</dt>
+    <dd>{b.mainActivity[lang]}</dd>
+
+    <dt>{t(lang, 'imprint.activities')}</dt>
+    <dd>
+      <ul class="plain">
+        {b.activities.map((a) => <li>{a[lang]}</li>)}
+      </ul>
+    </dd>
+  </dl>
+</BaseLayout>
