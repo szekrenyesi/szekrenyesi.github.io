@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://szekrenyes.comp-ling.org',
@@ -9,4 +10,15 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
+  integrations: [
+    sitemap({
+      i18n: {
+        defaultLocale: 'hu',
+        locales: {
+          hu: 'hu-HU',
+          en: 'en-US',
+        },
+      },
+    }),
+  ],
 });

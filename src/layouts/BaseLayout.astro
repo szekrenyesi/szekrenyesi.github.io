@@ -9,12 +9,28 @@ interface Props {
   title: string;
   lang: Lang;
   description?: string;
+  ogImage?: string;
 }
 
-const { title, lang, description } = Astro.props;
+const { title, lang, description, ogImage } = Astro.props;
 const fullTitle = `${title} · ${lang === 'hu' ? profile.name : profile.nameEn}`;
 const currentPath = Astro.url.pathname;
 const year = new Date().getFullYear();
+
+// Absolute URL for the current page (canonical + og:url)
+const canonical = new URL(currentPath, Astro.site).toString();
+
+// hreflang alternates: strip /en prefix, then build both locales
+const stripped =
+  lang === 'en'
+    ? currentPath.replace(/^\/en/, '') || '/'
+    : currentPath;
+const huUrl = new URL(localizedPath('hu', stripped), Astro.site).toString();
+const enUrl = new URL(localizedPath('en', stripped), Astro.site).toString();
+
+const ogLocale = lang === 'hu' ? 'hu_HU' : 'en_US';
+const ogAlt = lang === 'hu' ? 'en_US' : 'hu_HU';
+const ogImageUrl = ogImage ? new URL(ogImage, Astro.site).toString() : undefined;
 ---
 
 <!doctype html>
@@ -25,6 +41,29 @@ const year = new Date().getFullYear();
     <title>{fullTitle}</title>
     {description && <meta name="description" content={description} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Canonical + language alternates -->
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="hu" href={huUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={huUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content={lang === 'hu' ? profile.name : profile.nameEn} />
+    <meta property="og:title" content={fullTitle} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={ogAlt} />
+    {ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content={ogImageUrl ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={fullTitle} />
+    {description && <meta name="twitter:description" content={description} />}
+    {ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

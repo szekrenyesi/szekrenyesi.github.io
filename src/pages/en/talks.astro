@@ -5,7 +5,7 @@ import { talks } from '../../data/talks';
 const lang = 'en' as const;
 ---
 
-<BaseLayout title={t(lang, 'talks.title')} lang={lang}>
+<BaseLayout title={t(lang, 'talks.title')} lang={lang} description={t(lang, 'desc.talks')}>
   <h1>{t(lang, 'talks.title')}</h1>
 
   {talks.map((tk) => (

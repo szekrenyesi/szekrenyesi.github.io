@@ -4,7 +4,7 @@ import { t } from '../i18n/ui';
 const lang = 'hu' as const;
 ---
 
-<BaseLayout title="Kezdőlap" lang={lang}>
+<BaseLayout title="Kezdőlap" lang={lang} description={t(lang, 'desc.home')}>
   <p class="tagline">{t(lang, 'home.tagline')}</p>
   <h1>Szekrényes István</h1>
   <p class="lead">{t(lang, 'home.intro')}</p>

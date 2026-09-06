@@ -15,7 +15,7 @@ const grouped = pubTypeOrder
   .filter((g) => g.items.length > 0);
 ---
 
-<BaseLayout title={t(lang, 'publications.title')} lang={lang}>
+<BaseLayout title={t(lang, 'publications.title')} lang={lang} description={t(lang, 'desc.publications')}>
   <h1>{t(lang, 'publications.title')}</h1>
 
   <p><a href={profile.mtmt}>{t(lang, 'publications.full')} →</a></p>

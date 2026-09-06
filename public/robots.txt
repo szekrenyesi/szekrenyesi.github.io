@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://szekrenyes.comp-ling.org/sitemap-index.xml

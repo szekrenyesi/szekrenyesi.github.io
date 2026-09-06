@@ -51,6 +51,14 @@ export const ui = {
     'imprint.statistical': 'Statisztikai számjel',
     'imprint.activity': 'Főtevékenység',
     'imprint.activities': 'Egyéb bejelentett tevékenységek',
+
+    'desc.home': 'Szekrényes István, a Debreceni Egyetem Filozófia Intézetének adjunktusa. Filozófiai kurzusok mellett számítógépes nyelvészettel, beszédtechnológiával és digitális bölcsészeti fejlesztésekkel foglalkozom.',
+    'desc.about': 'Szekrényes István önéletrajza: végzettség, PhD-értekezés, korábbi és jelenlegi munkahelyek a Debreceni Egyetem Filozófia Intézetében és az ELTE Digitális Bölcsészet Tanszékén.',
+    'desc.publications': 'Szekrényes István publikációi: folyóiratcikkek, könyvfejezetek, szerkesztett kötetek, konferenciaközlemények — beszédtechnológia, digitális bölcsészet és filozófia témában.',
+    'desc.talks': 'Szekrényes István konferencia-előadásai hazai és nemzetközi konferenciákon 2010 óta — beszédtechnológia, prozódia, digitális bölcsészet, filozófia.',
+    'desc.services': 'Egyéni vállalkozói szolgáltatások: HTR- és ASR-modellek fejlesztése, egyedi szoftverfejlesztés, weboldal-tervezés, LaTeX-tördelés, kutatási tanácsadás.',
+    'desc.contact': 'Elérhetőség: munkahelyi és vállalkozói e-mail és telefon; online profilok (MTMT, GitHub).',
+    'desc.imprint': 'Impresszum és vállalkozói adatok Szekrényes István egyéni vállalkozóhoz.',
   },
   en: {
     'nav.home': 'Home',
@@ -95,6 +103,14 @@ export const ui = {
     'imprint.statistical': 'Statistical identifier',
     'imprint.activity': 'Main activity',
     'imprint.activities': 'Other registered activities',
+
+    'desc.home': 'István Szekrényes, Assistant Professor at the Institute of Philosophy, University of Debrecen. Alongside teaching philosophy, I work in computational linguistics, speech technology, and digital humanities.',
+    'desc.about': 'Biography of István Szekrényes: education, PhD dissertation, current and previous positions at the University of Debrecen and Eötvös Loránd University.',
+    'desc.publications': 'Publications by István Szekrényes: journal articles, book chapters, edited volumes, and conference proceedings on speech technology, digital humanities, and philosophy.',
+    'desc.talks': 'Conference talks by István Szekrényes at Hungarian and international venues since 2010 — speech technology, prosody, digital humanities, philosophy.',
+    'desc.services': 'Sole-proprietorship services: HTR and ASR model development, custom software development, web design, LaTeX typesetting, research consultancy.',
+    'desc.contact': 'Contact details: workplace and business e-mail and phone; online profiles (MTMT, GitHub).',
+    'desc.imprint': 'Imprint and business details of István Szekrényes, sole proprietor.',
   },
 } as const;
 
