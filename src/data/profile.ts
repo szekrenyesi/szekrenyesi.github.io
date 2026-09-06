@@ -14,7 +14,7 @@ export const profile = {
   cvUrl: '/cv.pdf',
   // Profilkép: tedd a fájlt a public/ mappába (pl. public/avatar.jpg),
   // majd írd ide az URL-t (a public/ gyökere = /). Ha null, monogram jelenik meg.
-  avatar: null as string | null,
+  avatar: '/avatar.jpg',//null as string | null,
   academic: {
     email: 'szekrenyes.istvan@arts.unideb.hu',
     phone: '+36 52 512 900 / 22124',
